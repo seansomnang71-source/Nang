@@ -1,0 +1,6 @@
+{
+  "name": "SN STORE — Online Store & Order Management System",
+  "description": "Complete Cambodian online shoes & fashion store with Order Management, Inventory, Exchange, Sales Analytics, Google Sheets Apps Script Backend, and Telegram Bot notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

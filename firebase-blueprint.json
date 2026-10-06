@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "CustomerAccount": {
+      "title": "CustomerAccount",
+      "description": "Authenticated customer profile via Google Account or Telegram",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["google", "telegram"],
+          "maxLength": 32
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "phone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "telegramUsername": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "photoURL": {
+          "type": "string",
+          "maxLength": 500
+        }
+      },
+      "required": ["uid", "provider", "displayName"]
+    }
+  },
+  "firestore": {
+    "/customer_accounts/{uid}": {
+      "schema": "CustomerAccount",
+      "description": "Stores authenticated customer account metadata restricted to the owner"
+    }
+  }
+}
